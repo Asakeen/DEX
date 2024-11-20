@@ -1,0 +1,80 @@
+issuer: http://dex.auth.svc.cluster.local:5556/dex
+storage:
+  type: kubernetes
+  config:
+    inCluster: true
+web:
+  http: 0.0.0.0:5556
+logger:
+  level: "debug"
+  format: text
+oauth2:
+  skipApprovalScreen: true
+enablePasswordDB: true
+staticPasswords:
+- email: user@example.com
+  hashFromEnv: DEX_USER_PASSWORD
+  username: user
+  userID: "15841185641783"
+- email: "ngorbenko@example.com"
+  hash: "$2b$12$7Mjxpl67buAUFSmxc/h.8.5ah1UaGh7jiZl7yjmymnLRpPNoLCgd6"
+  username: ngorbenko
+  userID: ngorbenko
+- email: "ebasaeva@example.com"
+  hash: "$2b$12$G/T6QHF7uHLaKtwpv/dQ5OrcVPXQ5TWN6HN0Zp0/sGrwUWiFoP3uG"
+  username: ebasaeva
+  userID: ebasaeva
+- email: "nevglevskaya@example.com"
+  hash: "$2b$12$7tYyWF2jEVSBs3DZCbpIFe19dJzlkgcgI46DrkgKiAzCMAwzVzMkm"
+  username: nevglevskaya
+  userID: nevglevskaya
+- email: "akorzhov@example.com"
+  hash: "$2b$12$QLitQXtXf.9.8xhZoXtXkuAz2MxqzlnW.kmu.jLzrcD9oUXECEvNS"
+  username: akorzhov
+  userID: akorzhov
+- email: "vlyadskaya@example.com"
+  hash: "$2b$12$9NqZYIF14lpWJ5pyizrgZO4HP2gqhbZGmulPXpuFBTIn3QvHRaSxa"
+  username: vlyadskaya
+  userID: vlyadskaya
+- email: "mkorovin@example.com"
+  hash: "$2b$12$KP8TNq5DvZ1awNMYwTnK.u.I6beINGUf/qWVGgZw75jeGbo5KizpO"
+  username: mkorovin
+  userID: mkorovin
+- email: "oageeva@example.com"
+  hash: "$2b$12$gbfiDUvrCQBK.i1ACuSUU.W5zw6jUNbnmdZCapZE6tEa3K361Yqpa"
+  username: oageeva
+  userID: oageeva
+- email: "udanilova@example.com"
+  hash: "$2b$12$aNtw.bvPTCeFzRyrjsXzYe7fSU6XGgiyxxJo2sR8n5z5uZeTagpIi"
+  username: udanilova
+  userID: udanilova
+- email: "edanilova@example.com"
+  hash: "$2b$12$KozMbv7WrJLXksdpbysUee1ydYbTgxpuDOOAE3qXDwb89EaA7DTtK"
+  username: edanilova
+  userID: edanilova
+- email: "ckalashnikov@example.com"
+  hash: "$2b$12$MjUOEaiy2fe7fgUSYIi.gOtHKRrJdJhS24lzdgUquv3KhuOOYloI."
+  username: ckalashnikov
+  userID: ckalashnikov
+- email: "belogolov@example.com"
+  hash: "$2b$12$uD6R1IyjDrWo/Rj7NLezb.hEU5BDM8IU8Gx1KZ/97sq4zyRccja4."
+  username: belogolov
+  userID: belogolov
+- email: "sadovsky@example.com"
+  hash: "$2b$12$Gmkqac68U5YNSFlq0qCKreQ8TYpvuMLak/HHvTfuW8I4e17viJIFm"
+  username: sadovsky
+  userID: sadovsky
+- email: "ivanaysky@example.com"
+  hash: "$2b$12$QPxM2cqhE/Fi7T2PAS8Ih.V618PcWzvSKZPo6j882l9xH8xS1lAam"
+  username: ivanaysky
+  userID: ivanaysky
+- email: "kurdyukov@example.com"
+  hash: "$2b$12$pSc5CR/U6oAXV3/D/JiEx.NYrHgfrnn/nnCBVaoGxF7m9JDhytz5y"
+  username: kurdyukov
+  userID: kurdyukov
+staticClients:
+# https://github.com/dexidp/dex/pull/1664
+- idEnv: OIDC_CLIENT_ID
+  redirectURIs: ["/oauth2/callback"]
+  name: 'Dex Login Application'
+  secretEnv: OIDC_CLIENT_SECRET
